@@ -30,7 +30,31 @@ function playerChoice() {
     }
 }
 
+console.log("You selected " + playerSelection);
+const computerSelection = getComputerChoice();
+console.log("The computer selected " + computerSelection);
 
+
+function playRound(playerSelection, computerSelection) {
+    if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
+        console.log("You loose, Rock beats Scissors!");
+    } else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
+        console.log("You win, Paper beats Rock!");
+    } else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
+        console.log("You loose, Scissors beats Paper!");
+    } else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
+        console.log("You win, Rock beats Scissors!");
+    } else if (computerSelection == 'Paper' && playerSelection == 'Rock') {
+        console.log("You loose, Paper beats Rock!");
+    } else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
+        console.log("You win, Scissors beats Rock!");
+    } else {
+        console.log("It's a draw!")
+    }
+}
+
+
+playRound(playerSelection, computerSelection);
 
 
 
