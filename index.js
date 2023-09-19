@@ -47,8 +47,10 @@ function playRound(playerSelection, computerSelection) {
         console.log("You loose, Paper beats Rock!");
     } else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
         console.log("You win, Scissors beats Rock!");
-    } else {
+    } else if (computerSelection == playerSelection) {
         console.log("It's a draw!")
+    } else {
+        playerChoice();  
     }
 }
 
