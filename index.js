@@ -16,5 +16,22 @@ function getComputerChoice() {
 }
 
 
+const playerSelection = playerChoice();
+
+function playerChoice() {
+    const userChoice = prompt("Write your selection of either Rock, Paper or Scissors: ");
+    const choice = userChoice[0].toUpperCase() + userChoice.slice(1).toLowerCase();
+    if (choice == 'Rock' || choice == 'Paper' || choice == 'Scissors') {
+        return choice;
+    } else {
+        console.log(choice + " is an invalid input! Please choose either Rock, Paper or Scissors");
+        userChoice;
+        return;
+    }
+}
+
+
+
+
 
 
