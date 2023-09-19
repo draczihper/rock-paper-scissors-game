@@ -24,7 +24,7 @@ function playerChoice() {
     if (choice == 'Rock' || choice == 'Paper' || choice == 'Scissors') {
         return choice;
     } else {
-        console.log(choice + " is an invalid input! Please choose either Rock, Paper or Scissors");
+        alert(choice + " is an invalid input! Please choose either Rock, Paper or Scissors");
         return choice;
     }
 }
