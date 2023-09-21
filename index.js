@@ -36,27 +36,30 @@ console.log("The computer selected " + computerSelection);
 
 function playRound(playerSelection, computerSelection) {
     if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
-        console.log("You loose, Rock beats Scissors!");
+        console.log("You lost this round, Rock beats Scissors!");
     } else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
-        console.log("You win, Paper beats Rock!");
+        console.log("You won this round, Paper beats Rock!");
     } else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
-        console.log("You loose, Scissors beats Paper!");
+        console.log("You lost this round, Scissors beats Paper!");
     } else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
-        console.log("You win, Rock beats Scissors!");
+        console.log("You won this round, Rock beats Scissors!");
     } else if (computerSelection == 'Paper' && playerSelection == 'Rock') {
-        console.log("You loose, Paper beats Rock!");
+        console.log("You lost round, Paper beats Rock!");
     } else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
-        console.log("You win, Scissors beats Rock!");
+        console.log("You won this round, Scissors beats Rock!");
     } else if (computerSelection == playerSelection) {
-        console.log("It's a draw!")
+        console.log("It's a tie!")
     } else {
         playerChoice();  
     }
 }
 
 
-playRound(playerSelection, computerSelection);
+let computerScore;
+let playerScore;
+function game() {
+   // playRound(playerSelection, computerSelection);
+    
+}
 
-
-
-
+game();
