@@ -17,9 +17,7 @@ function startGame() {
         }
         return computerChoice;
     }
-    
-    const playerSelection = playerChoice();
-    
+
     function playerChoice() {
         const userChoice = prompt("Write your selection of either Rock, Paper or Scissors: ");
         const choice = userChoice[0].toUpperCase() + userChoice.slice(1).toLowerCase();
@@ -30,12 +28,12 @@ function startGame() {
             return choice;
         }
     }
-    
+
+    const playerSelection = playerChoice();
     console.log("You selected " + playerSelection);
     const computerSelection = getComputerChoice();
     console.log("The computer selected " + computerSelection);
-    
-    
+
     function playRound(playerSelection, computerSelection) {
         if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
             console.log("You lost this round, Rock beats Scissors!");
@@ -58,26 +56,18 @@ function startGame() {
         } else if (computerSelection == playerSelection) {
             console.log("It's a tie!")
         } else {
-            return;  
-        }  
+            return;
+        }
     }
     playRound(playerSelection, computerSelection);
-    
 }
-
-
 
 let loopTime = 5
 function game() {
-   // playRound(playerSelection, computerSelection);
-   for (i = 1; i <= loopTime; i++) {
-    startGame(); 
-    if (playerScore == 1 && computerScore == 1) {
-        playerScore++;
-        computerScore++;
+    for (i = 1; i <= loopTime; i++) {
+        startGame();
+        console.log(`You: ${playerScore} | Computer: ${computerScore}`);
     }
-    console.log(`You: ${playerScore} | Computer: ${computerScore}`);
-   }
 }
 
 game();
