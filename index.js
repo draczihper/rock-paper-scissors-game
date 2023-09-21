@@ -68,6 +68,13 @@ function game() {
         startGame();
         console.log(`You: ${playerScore} | Computer: ${computerScore}`);
     }
+    if (playerScore > computerScore) {
+        console.log("YOU WON!")
+    } else if (playerScore < computerScore) {
+        console.log("YOU LOST BUT BETTER LUCK NEXT TIME")
+    } else {
+        console.log("IT'S A EVEN")
+    }
 }
 
 game();
