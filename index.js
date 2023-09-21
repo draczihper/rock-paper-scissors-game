@@ -1,6 +1,9 @@
 
 randomChoice = ['Rock', 'Scissors', 'Paper']
 
+let computerScore = 0;
+let playerScore = 0;
+
 function startGame() {
     function getComputerChoice() {
         const randomIndex = Math.floor(Math.random() * 3);
@@ -14,7 +17,6 @@ function startGame() {
         }
         return computerChoice;
     }
-    
     
     const playerSelection = playerChoice();
     
@@ -35,32 +37,29 @@ function startGame() {
     
     
     function playRound(playerSelection, computerSelection) {
-        var computerScore = 0;
-        var playerScore = 0;
         if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
             console.log("You lost this round, Rock beats Scissors!");
-            computerScore += 1;
+            computerScore++;
         } else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
             console.log("You won this round, Paper beats Rock!");
-            playerScore += 1;
+            playerScore++;
         } else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
             console.log("You lost this round, Scissors beats Paper!");
-            computerScore += 1;
+            computerScore++;
         } else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
             console.log("You won this round, Rock beats Scissors!");
-            playerScore += 1;
+            playerScore++;
         } else if (computerSelection == 'Paper' && playerSelection == 'Rock') {
             console.log("You lost this round, Paper beats Rock!");
-            computerScore += 1;
+            computerScore++;
         } else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
             console.log("You won this round, Scissors beats Rock!");
-            playerScore += 1;
+            playerScore++;
         } else if (computerSelection == playerSelection) {
             console.log("It's a tie!")
         } else {
-            playerChoice();  
-        }
-        console.log(`You: ${playerScore} | Computer: ${computerScore}`);
+            return;  
+        }  
     }
     playRound(playerSelection, computerSelection);
     
@@ -73,6 +72,11 @@ function game() {
    // playRound(playerSelection, computerSelection);
    for (i = 1; i <= loopTime; i++) {
     startGame(); 
+    if (playerScore == 1 && computerScore == 1) {
+        playerScore++;
+        computerScore++;
+    }
+    console.log(`You: ${playerScore} | Computer: ${computerScore}`);
    }
 }
 
