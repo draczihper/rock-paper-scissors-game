@@ -2,6 +2,7 @@ const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
 const resultDiv = document.getElementById('results');
+const scoreDiv= document.getElementById('score');
 const computerChoiceSpan = document.getElementById('computer-choice');
 const playerChoiceSpan = document.getElementById('player-choice');
 
@@ -53,24 +54,25 @@ let playerScore = 0;
 
     function playRound(playerSelection, computerSelection) {
         if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
-            console.log("You lost this round, Rock beats Scissors!");
+            resultDiv.innerHTML = `<span>You lost this round, Rock beats Scissors.</span>`;
             computerScore++;
         } else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
-            console.log("You won this round, Paper beats Rock!");
+            resultDiv.innerHTML = `<span>You won this round, Paper beats Rock.</span>`;
             playerScore++;
         } else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
-            console.log("You lost this round, Scissors beats Paper!");
+            resultDiv.innerHTML = `<span>You lost this round, Scissors beats Paper.</span>`;
             computerScore++;
         } else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
-            console.log("You won this round, Rock beats Scissors!");
+            resultDiv.innerHTML = `<span>You won this round, Rock beats Scissors.</span>`;
             playerScore++;
         } else if (computerSelection == 'Paper' && playerSelection == 'Rock') {
-            console.log("You lost this round, Paper beats Rock!");
+            resultDiv.innerHTML = `<span>You lost this round, Paper beats Rock.</span>`;
             computerScore++;
         } else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
-            console.log("You won this round, Scissors beats Rock!");
+            resultDiv.innerHTML = `<span>You won this round, Scissors beats Rock.</span>`;
             playerScore++;
         } else if (computerSelection == playerSelection) {
+            resultDiv.innerHTML = `<span>It's a tie.</span>`;
             console.log("It's a tie!")
         } else {
             return;
