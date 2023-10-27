@@ -1,6 +1,7 @@
 const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
+// const buttonEl = document.querySelectorAll('button');
 const resultDiv = document.getElementById('results');
 const scoreDiv= document.getElementById('score');
 const computerChoiceSpan = document.getElementById('computer-choice');
@@ -8,6 +9,7 @@ const playerChoiceSpan = document.getElementById('player-choice');
 const computerScoreSpan = document.getElementById('computer-score');
 const playerScoreSpan = document.getElementById('player-score');
 const winnerDiv = document.getElementById('winner');
+const replayButton = document.getElementById('replay');
 
 let computerScore = 0;
 let playerScore = 0;
@@ -24,7 +26,7 @@ let roundsPlayed = 0;
         } else {
             computerChoice = randomChoice[randomIndex];
         }
-        computerChoiceSpan.innerText = `The computer selected: ${computerChoice} \n`;
+        computerChoiceSpan.innerText = `The computer selected: ${computerChoice}`;
         return computerChoice;
     }
     
@@ -35,7 +37,7 @@ let roundsPlayed = 0;
     rockButton.addEventListener('click', () => {
         selected = 'rock';
         const playerSelection = selected[0].toUpperCase() + selected.slice(1);
-        playerChoiceSpan.innerText = `You selected: ${playerSelection} \n`;
+        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
         computerSelection = choiceOfComputer();
         playRound(playerSelection, computerSelection)
       });
@@ -43,7 +45,7 @@ let roundsPlayed = 0;
       paperButton.addEventListener('click', () => {
         selected = 'paper';
         const playerSelection = selected[0].toUpperCase() + selected.slice(1);
-        playerChoiceSpan.innerText = `You selected: ${playerSelection} \n`;
+        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
         computerSelection = choiceOfComputer();
         playRound(playerSelection, computerSelection)
       });
@@ -51,7 +53,7 @@ let roundsPlayed = 0;
       scissorsButton.addEventListener('click', () => {
         selected = 'scissors';
         const playerSelection = selected[0].toUpperCase() + selected.slice(1);
-        playerChoiceSpan.innerText = `You selected: ${playerSelection} \n`;
+        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
         computerSelection = choiceOfComputer();
         playRound(playerSelection, computerSelection);
     });
@@ -97,8 +99,12 @@ let roundsPlayed = 0;
         } else {
             winnerDiv.innerHTML = `<span>IT'S EVEN</span>`;
         }
-        
+        replayButton.addEventListener('click', (e) => {
+            location.reload;
+        });
     }
+
+    
 
 
 

@@ -79,3 +79,12 @@ button:hover {
     color: #fff;
     font-size: 36px;
 }
+
+#replay {
+    color: #fff;
+    font-size: 32px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
