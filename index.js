@@ -22,30 +22,33 @@ let playerScore = 0;
         computerChoiceSpan.innerText = `The computer selected: ${computerChoice} \n`;
         return computerChoice;
     }
-
-    choiceOfComputer();
     
+    let selected;
 
-    // let playerChoice;
+    rockButton.addEventListener('click', () => {
+        selected = 'rock';
+        const playerSelection = selected[0].toUpperCase() + selected.slice(1);
+        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
+        choiceOfComputer();
+        playRound(playerSelection, computerSelection)
+      });
 
-    // rockButton.addEventListener('click', () => {
-    //     playerSelection = 'rock';
-    //     playerChoiceSpan = `You selected ${playerSelection}`;
-    //     playRound(playerSelection, computerSelection)
-    //   });
-
-    //   paperButton.addEventListener('click', () => {
-    //     playerSelection = 'paper';
-    //     playerChoiceSpan = `You selected ${playerSelection}`;
-    //     playRound(playerSelection, computerSelection)
+      paperButton.addEventListener('click', () => {
+        selected = 'paper';
+        const playerSelection = selected[0].toUpperCase() + selected.slice(1);
+        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
+        choiceOfComputer();
+        playRound(playerSelection, computerSelection)
         
-    //   });
+      });
       
-    //   scissorsButton.addEventListener('click', () => {
-    //     playerSelection = 'scissors';
-    //     playerChoiceSpan = `You selected ${playerSelection}`;
-    //     playRound(playerSelection, computerSelection);
-    // });
+      scissorsButton.addEventListener('click', () => {
+        selected = 'scissors';
+        const playerSelection = selected[0].toUpperCase() + selected.slice(1);
+        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
+        choiceOfComputer();
+        playRound(playerSelection, computerSelection);
+    });
 
     // function playRound(playerSelection, computerSelection) {
     //     if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
