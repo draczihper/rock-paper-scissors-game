@@ -5,9 +5,13 @@ const resultDiv = document.getElementById('results');
 const scoreDiv= document.getElementById('score');
 const computerChoiceSpan = document.getElementById('computer-choice');
 const playerChoiceSpan = document.getElementById('player-choice');
+const computerScoreSpan = document.getElementById('computer-score');
+const playerScoreSpan = document.getElementById('player-score');
+const winnerDiv = document.getElementById('winner');
 
 let computerScore = 0;
 let playerScore = 0;
+let roundsPlayed = 0;
 
     function choiceOfComputer() {
         const randomChoice = ['Rock', 'Paper', 'Scissors']
@@ -77,25 +81,24 @@ let playerScore = 0;
         } else {
             return;
         }
+        roundsPlayed++;
+    if (roundsPlayed === 5) {
+        endGame();
+    }
     }
 
+    function endGame() {
+        playerScoreSpan.innerText = `Player: ${playerScore}`;
+        computerScoreSpan.innerText = `Computer: ${computerScore} `;
+        if (playerScore > computerScore) {
+            winnerDiv.innerHTML = `<span> YOU WON!, AI has no match against you :)</span>`;
+        } else if (playerScore < computerScore) {
+            winnerDiv.innerHTML = `<span>YOU LOST BUT BETTER LUCK NEXT TIME</span>`;
+        } else {
+            winnerDiv.innerHTML = `<span>IT'S EVEN</span>`;
+        }
+        
+    }
 
-
-// let loopTime = 5
-// function game() {
-//     for (i = 1; i <= loopTime; i++) {
-//         startGame();
-//         console.log(`You: ${playerScore} | Computer: ${computerScore}`);
-//     }
-//     if (playerScore > computerScore) {
-//         console.log("YOU WON!")
-//     } else if (playerScore < computerScore) {
-//         console.log("YOU LOST BUT BETTER LUCK NEXT TIME")
-//     } else {
-//         console.log("IT'S A EVEN")
-//     }
-// }
-
-// game();
 
 
