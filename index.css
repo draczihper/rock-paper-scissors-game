@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(45deg, #295270, #524175);
+}
+
+h1{
+    font-family: 'Noto Serif', serif;
+    font-size: 36px;
+    margin-top: 50px;
+    color: #fff;
+    text-align: center;
+
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 20px;
+}
+
+button {
+    all: unset;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    padding: 10px 30px;
+    background-color: #0C0C0C;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 24px;  
+}
+
+#results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    padding: 20px 0;
+}
+
+#score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    font-size: 24px;
+    padding: 20px 0;
+}
+
+#winner {
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 36px;
+}
