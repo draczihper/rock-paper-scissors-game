@@ -28,7 +28,7 @@ let playerScore = 0;
     rockButton.addEventListener('click', () => {
         selected = 'rock';
         const playerSelection = selected[0].toUpperCase() + selected.slice(1);
-        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
+        playerChoiceSpan.innerText = `You selected: ${playerSelection} \n`;
         choiceOfComputer();
         playRound(playerSelection, computerSelection)
       });
@@ -36,7 +36,7 @@ let playerScore = 0;
       paperButton.addEventListener('click', () => {
         selected = 'paper';
         const playerSelection = selected[0].toUpperCase() + selected.slice(1);
-        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
+        playerChoiceSpan.innerText = `You selected: ${playerSelection} \n`;
         choiceOfComputer();
         playRound(playerSelection, computerSelection)
         
@@ -45,7 +45,7 @@ let playerScore = 0;
       scissorsButton.addEventListener('click', () => {
         selected = 'scissors';
         const playerSelection = selected[0].toUpperCase() + selected.slice(1);
-        playerChoiceSpan.innerText = `You selected: ${playerSelection}`;
+        playerChoiceSpan.innerText = `You selected: ${playerSelection} \n`;
         choiceOfComputer();
         playRound(playerSelection, computerSelection);
     });
